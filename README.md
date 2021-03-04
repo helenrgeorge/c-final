@@ -10,33 +10,34 @@ namespace Programming_Final_George
         static double[] noisydata = new double [100];
         static double noiseFactor = .07;
 
-        // create randome object and seed with 243
+        // create random object and seed with 243
 
         static Random randomNumbers = new Random(243);
 
+        
         NoiseGen()
         {
-
+           
         }
 
         NoiseGen(double input)
         {
-
+            noiseFactor = input;
         }
 
-        
+
         static void getValues()
         {
-            int c = 0;
+
+   
 
             // calculate clean data
 
-            for (double a = 0; a < 100; a++)
+            for (int a = 0; a < 100; a++)
             {
-                double b = a / 100;
-                cleandata[c] = Math.Sin(b);
-                c = c + 1;
-         
+                double b = (double)a / 100;
+                cleandata[a] = Math.Sin(b);
+
             }
 
             addNoise();
@@ -70,8 +71,20 @@ namespace Programming_Final_George
 
         static void Main(string[] args)
         {
-            // Create noisegen object
-            NoiseGen myobj = new NoiseGen();
+
+            try
+            {
+                Console.Write("Enter the new noise factor: ");
+
+                double input = Convert.ToDouble(Console.ReadLine());
+                NoiseGen myobj = new NoiseGen(input);
+            }
+
+            catch
+            {
+                NoiseGen myobj = new NoiseGen();
+            }
+         
 
             // call method
             getValues();
