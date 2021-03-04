@@ -10,7 +10,7 @@ namespace Programming_Final_George
         static double[] noisydata = new double [100];
         static double noiseFactor = .07;
 
-        // create random object and seed with 243
+        // create randome object and seed with 243
 
         static Random randomNumbers = new Random(243);
 
@@ -46,6 +46,7 @@ namespace Programming_Final_George
 
         // calculate noisy data
 
+      
         static void addNoise()
         {
 
@@ -59,9 +60,10 @@ namespace Programming_Final_George
 
         static void printTable ()
         {
+            Console.WriteLine("Element" + "," + "Clean" + "," + "Noisy");
             for (int a = 0; a < 100; a++)
             {
-                Console.WriteLine(a + "\t" + cleandata[a] + "\t" + noisydata[a]);
+                Console.WriteLine(a + "," + cleandata[a] + "," + noisydata[a]);
 
             }
         }
