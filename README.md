@@ -1,16 +1,16 @@
 # c-final
-Calculate date and save in CSV file
-
 using System;
 using System.Linq;
 
 namespace Programming_Final_George
 {
     class NoiseGen
-    { 
+    {
         static double[] cleandata = new double [100];
         static double[] noisydata = new double [100];
         static double noiseFactor = .07;
+
+        // create randome object and seed with 243
 
         static Random randomNumbers = new Random(243);
 
@@ -24,9 +24,12 @@ namespace Programming_Final_George
 
         }
 
+        
         static void getValues()
         {
             int c = 0;
+
+            // calculate clean data
 
             for (double a = 0; a < 100; a++)
             {
@@ -41,6 +44,8 @@ namespace Programming_Final_George
 
         }
 
+        // calculate noisy data
+
         static void addNoise()
         {
 
@@ -49,6 +54,8 @@ namespace Programming_Final_George
                 noisydata[a] = (cleandata[a]) + (randomNumbers.NextDouble() * (noiseFactor - (-1 * noiseFactor)) + (-1 * noiseFactor));
             }
         }
+
+        // print both arrays and their positions
 
         static void printTable ()
         {
@@ -61,10 +68,11 @@ namespace Programming_Final_George
 
         static void Main(string[] args)
         {
-
+            // Create noisegen object
             NoiseGen myobj = new NoiseGen();
+
+            // call method
             getValues();
         }
     }
 }
-
