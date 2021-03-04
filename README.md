@@ -10,7 +10,7 @@ namespace Programming_Final_George
         static double[] noisydata = new double [100];
         static double noiseFactor = .07;
 
-        // create randome object and seed with 243
+        // create random object and seed with 243
 
         static Random randomNumbers = new Random(243);
 
